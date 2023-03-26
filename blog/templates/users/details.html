@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  User #{{ user.username }}
+{% endblock %}
+
+{% block body %}
+  <h4>User's detail</h4>
+  <h3>{{ user.username }}</h3>
+  {% if user.is_staff %}
+    <span class="badge bg-secondary">staff</span>
+  {% endif %}
+<div>
+  <button type="button"><a class="btn btn-light btn-sm" href="{{ url_for('users_app.list') }}">Back to users list</a></button>
+</div>
+{% endblock %}

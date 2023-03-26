@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Tags list
+{% endblock %}
+
+{%block body %}
+  <h4>Tags</h4>
+  <div>
+    <ul>
+      {% for tag in tags %}
+        <li>
+          <a href="{{ url_for('tags_app.details', tag_id=tag.id) }}">{{ tag.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <hr>
+<!--    <a class="btn btn-primary btn-sm" href="{{ url_for('articles_app.create') }}">Create new</a>-->
+  </div>
+{% endblock %}

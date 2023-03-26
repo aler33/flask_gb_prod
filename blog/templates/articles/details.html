@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Article #{{ article.id }}: {{ article.title }}
+{% endblock %}
+
+{% block body %}
+  <h4>{{ article.title }}</h4>
+  <div>
+    <p>{{ article.body }}</p>
+    <div style="font-size: 70%"> Published {{ article.dt_created }}</div>
+    <div style="font-size: 80%">by <a href="{{ url_for('users_app.details', user_id=article.author.user.id) }}">{{ article.author.user.username }}</a>
+    </div>
+    {% if article.tags %}
+      {% for tag in article.tags %}
+        <a class="btn btn-secondary btn-sm" href="{{ url_for('tags_app.details', tag_id=tag.id) }}">{{ tag.name }}</a>
+      {% endfor %}
+    {% endif %}
+  </div>
+{% endblock %}
