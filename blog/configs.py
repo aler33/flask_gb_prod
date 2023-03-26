@@ -27,5 +27,6 @@ class TestingConfig(BaseConfig):
 class ProductionConfig(BaseConfig):
     DEBUG = True
     # SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
-    SQLALCHEMY_DATABASE_URI = "sqlite:////home/alexey/gb_lesson/Flask_g/Flask_gb/blog/blog1.db"
+    # SQLALCHEMY_DATABASE_URI = "sqlite:////home/alexey/gb_lesson/Flask_g/Flask_gb/blog/blog1.db"
+    SQLALCHEMY_DATABASE_URI = "sqlite:///./blog1.db"
     SECRET_KEY = os.environ.get("SECRET_KEY")
